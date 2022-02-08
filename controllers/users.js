@@ -1,7 +1,7 @@
 const db =require('../config/store')
 const {MongoClient} = require('mongodb');
 const passport= require('passport');
-const {toAuthJSON,createPassword}=require('../helpers/auth')
+const {toAuthJSON,createPassword,generaJWT}=require('../helpers/auth')
 
 function create(req,res,next){
   const body=req.body, password=body.pass;

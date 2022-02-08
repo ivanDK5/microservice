@@ -9,8 +9,8 @@ let createPassword= function(user,password){
   return {...user,salt,hash} 
 }
 
-let validatePassword = function (hash,password){
-  const newHash =crypto.pbkdf2Sync(password,this.salt,10000,512,'sha512').
+let validatePassword = function (hash,salt,password){
+  const newHash =crypto.pbkdf2Sync(password,salt,10000,512,'sha512').
   toString('hex');
   return hash===newHash;
 }
